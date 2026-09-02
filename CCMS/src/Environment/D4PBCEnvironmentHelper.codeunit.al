@@ -23,6 +23,18 @@ codeunit 62002 "D4P BC Environment Helper"
         DeleteEnvironment(Environment);
     end;
 
+    procedure DeleteLocalTenantEnvironmentData(CustomerNo: Code[20]; TenantId: Guid)
+    var
+        Environment: Record "D4P BC Environment";
+    begin
+        Environment.SetRange("Customer No.", CustomerNo);
+        Environment.SetRange("Tenant ID", TenantId);
+        if Environment.FindSet() then
+            repeat
+                DeleteLocalEnvironmentData(Environment);
+            until Environment.Next() = 0;
+    end;
+
     local procedure DeleteEnvironment(Environment: Record "D4P BC Environment")
     var
         _Environment: Record "D4P BC Environment";

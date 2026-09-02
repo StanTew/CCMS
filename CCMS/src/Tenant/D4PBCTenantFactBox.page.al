@@ -13,6 +13,27 @@ page 62012 "D4P BC Tenant FactBox"
     {
         area(Content)
         {
+            group(GetEnvironments)
+            {
+                Caption = 'Get Environments';
+                field("Tenant ID"; Rec."Tenant ID")
+                {
+                }
+                field("Get Environments Status"; Rec."Get Environments Status")
+                {
+                    StyleExpr = GetEnvironmentsStatusStyleExpr;
+                }
+                field("Get Environments Last Run"; Rec."Get Environments Last Run")
+                {
+                    StyleExpr = GetEnvironmentsLastRunStyleExpr;
+                }
+                field("Get Environments Error"; Rec."Get Environments Error")
+                {
+                    Style = Unfavorable;
+                    StyleExpr = HasGetEnvironmentsError;
+                    Visible = Rec."Get Environments Status" = Rec."Get Environments Status"::Error;
+                }
+            }
             group(Authentication)
             {
                 Caption = 'Authentication';
@@ -41,6 +62,37 @@ page 62012 "D4P BC Tenant FactBox"
             }
         }
     }
+
+    trigger OnAfterGetRecord()
+    begin
+        case Rec."Get Environments Status" of
+            Rec."Get Environments Status"::Completed:
+                GetEnvironmentsStatusStyleExpr := 'Favorable';
+            Rec."Get Environments Status"::Pending:
+                GetEnvironmentsStatusStyleExpr := 'Ambiguous';
+            Rec."Get Environments Status"::Error:
+                GetEnvironmentsStatusStyleExpr := 'Unfavorable';
+            else
+                GetEnvironmentsStatusStyleExpr := 'Standard';
+        end;
+
+        HasGetEnvironmentsError := Rec."Get Environments Error" <> '';
+        if Rec."Get Environments Last Run" = 0DT then
+            GetEnvironmentsLastRunStyleExpr := 'Standard'
+        else
+            if DT2Date(Rec."Get Environments Last Run") = Today then
+                GetEnvironmentsLastRunStyleExpr := 'Favorable'
+            else
+                if DT2Date(Rec."Get Environments Last Run") = Today - 1 then
+                    GetEnvironmentsLastRunStyleExpr := 'Ambiguous'
+                else
+                    GetEnvironmentsLastRunStyleExpr := 'Unfavorable';
+    end;
+
+    var
+        GetEnvironmentsLastRunStyleExpr: Text;
+        GetEnvironmentsStatusStyleExpr: Text;
+        HasGetEnvironmentsError: Boolean;
 
     local procedure GetSecretExpirationDate(): Date
     var

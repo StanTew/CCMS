@@ -184,7 +184,8 @@ page 62003 "D4P BC Environment List"
                         BCTenant.Get(Rec.GetFilter("Customer No."), Rec.GetFilter("Tenant ID"))
                     else
                         BCTenant.Get(Rec."Customer No.", Rec."Tenant ID");
-                    EnvironmentManagement.GetEnvironments(BCTenant);
+                    EnvironmentManagement.GetEnvironmentsTracked(BCTenant, true);
+                    CurrPage.Update(false);
                 end;
             }
             action(GetEnvironmentUpdateInfo)
@@ -458,6 +459,9 @@ page 62003 "D4P BC Environment List"
                 actionref(GetEnvironmentsPromoted; GetEnvironments)
                 {
                 }
+                actionref(DeleteAllFetchedPromoted; DeleteAllFetched)
+                {
+                }
                 actionref(EnvironmentDetailsPromoted; EnvironmentDetails)
                 {
                 }
@@ -507,9 +511,6 @@ page 62003 "D4P BC Environment List"
                 {
                 }
                 actionref(OperationsPromoted; Operations)
-                {
-                }
-                actionref(DeleteAllFetchedPromoted; DeleteAllFetched)
                 {
                 }
             }

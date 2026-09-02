@@ -24,6 +24,11 @@ codeunit 62018 "D4P BC Capacity Helper"
         Message(SuccessMsg);
     end;
 
+    procedure GetCapacityDataInBackground(CustomerNo: Code[20]; TenantID: Guid)
+    begin
+        GetQuotasAndStorage(CustomerNo, TenantID);
+    end;
+
     local procedure GetQuotasAndStorage(CustomerNo: Code[20]; TenantID: Guid)
     var
         CapacityHeader: Record "D4P BC Capacity Header";

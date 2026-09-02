@@ -35,6 +35,9 @@ page 62011 "D4P BC Tenant Card"
                 field("Partner Center Code"; Rec."Partner Center Code")
                 {
                 }
+                field(Blocked; Rec.Blocked)
+                {
+                }
             }
             group(Authentication)
             {

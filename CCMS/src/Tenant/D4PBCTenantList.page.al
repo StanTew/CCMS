@@ -36,6 +36,23 @@ page 62002 "D4P BC Tenant List"
                 }
                 field("Partner Center Code"; Rec."Partner Center Code")
                 {
+                    Visible = false;
+                }
+                field(Blocked; Rec.Blocked)
+                {
+                }
+                field("Get Environments Status"; Rec."Get Environments Status")
+                {
+                    StyleExpr = GetEnvironmentsStatusStyleExpr;
+                }
+                field("Get Environments Last Run"; Rec."Get Environments Last Run")
+                {
+                    StyleExpr = GetEnvironmentsLastRunStyleExpr;
+                }
+                field("Get Environments Error"; Rec."Get Environments Error")
+                {
+                    Style = Unfavorable;
+                    StyleExpr = HasGetEnvironmentsError;
                 }
             }
         }
@@ -57,6 +74,36 @@ page 62002 "D4P BC Tenant List"
     {
         area(Processing)
         {
+            action(GetAllEnvironmentsBackground)
+            {
+                Caption = 'Get All (Background)';
+                Image = RefreshLines;
+                ToolTip = 'Starts a background session for each non-blocked tenant to fetch the list of environments.';
+                trigger OnAction()
+                var
+                    BCTenant: Record "D4P BC Tenant";
+                    EnvironmentManagement: Codeunit "D4P BC Environment Mgt";
+                    TenantCount: Integer;
+                    ConfirmMsg: Label 'This will delete all locally stored environment data for %1 tenant(s) and start a background session to load it again. Continue?', Comment = '%1 = Number of tenants';
+                    NoTenantsErr: Label 'No tenants found.';
+                    StartedMsg: Label 'Background retrieval of environments started for %1 tenant(s).', Comment = '%1 = Number of tenants';
+                begin
+                    BCTenant.SetRange(Blocked, false);
+                    if not BCTenant.FindSet() then
+                        Error(NoTenantsErr);
+
+                    TenantCount := BCTenant.Count();
+                    if not Confirm(ConfirmMsg, true, TenantCount) then
+                        exit;
+
+                    repeat
+                        EnvironmentManagement.StartGetEnvironmentsBackground(BCTenant);
+                    until BCTenant.Next() = 0;
+
+                    Message(StartedMsg, TenantCount);
+                    CurrPage.Update(false);
+                end;
+            }
             action(Setup)
             {
                 Caption = 'Setup';
@@ -128,6 +175,13 @@ page 62002 "D4P BC Tenant List"
         }
         area(Promoted)
         {
+            group(Category_Environment)
+            {
+                Caption = 'Environment Tasks';
+                actionref(GetAllEnvironmentsPromoted; GetAllEnvironmentsBackground)
+                {
+                }
+            }
             group(Category_Navigation)
             {
                 Caption = 'Navigation';
@@ -156,4 +210,35 @@ page 62002 "D4P BC Tenant List"
             }
         }
     }
+
+    var
+        GetEnvironmentsLastRunStyleExpr: Text;
+        GetEnvironmentsStatusStyleExpr: Text;
+        HasGetEnvironmentsError: Boolean;
+
+    trigger OnAfterGetRecord()
+    begin
+        case Rec."Get Environments Status" of
+            Rec."Get Environments Status"::Completed:
+                GetEnvironmentsStatusStyleExpr := 'Favorable';
+            Rec."Get Environments Status"::Error:
+                GetEnvironmentsStatusStyleExpr := 'Unfavorable';
+            Rec."Get Environments Status"::Pending:
+                GetEnvironmentsStatusStyleExpr := 'Ambiguous';
+            else
+                GetEnvironmentsStatusStyleExpr := 'Standard';
+        end;
+
+        HasGetEnvironmentsError := Rec."Get Environments Error" <> '';
+        if Rec."Get Environments Last Run" = 0DT then
+            GetEnvironmentsLastRunStyleExpr := 'Standard'
+        else
+            if DT2Date(Rec."Get Environments Last Run") = Today then
+                GetEnvironmentsLastRunStyleExpr := 'Favorable'
+            else
+                if DT2Date(Rec."Get Environments Last Run") = Today - 1 then
+                    GetEnvironmentsLastRunStyleExpr := 'Ambiguous'
+                else
+                    GetEnvironmentsLastRunStyleExpr := 'Unfavorable';
+    end;
 }

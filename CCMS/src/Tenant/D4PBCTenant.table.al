@@ -112,6 +112,31 @@ table 62001 "D4P BC Tenant"
             TableRelation = "D4P BC Partner Center".Code;
             ValidateTableRelation = true;
         }
+        field(13; "Get Environments Status"; Option)
+        {
+            Caption = 'Get Environments Status';
+            OptionCaption = ' ,Pending,Completed,Error';
+            OptionMembers = " ",Pending,Completed,Error;
+            Editable = false;
+            ToolTip = 'Specifies the status of the last (background) Get Environments request for this tenant.';
+        }
+        field(14; "Get Environments Last Run"; DateTime)
+        {
+            Caption = 'Get Environments Last Run';
+            Editable = false;
+            ToolTip = 'Specifies the date and time the Get Environments request was last started for this tenant.';
+        }
+        field(15; "Get Environments Error"; Text[250])
+        {
+            Caption = 'Get Environments Error';
+            Editable = false;
+            ToolTip = 'Specifies the error message from the last failed Get Environments request, if any.';
+        }
+        field(16; Blocked; Boolean)
+        {
+            Caption = 'Blocked';
+            ToolTip = 'Specifies if this tenant is excluded from the background retrieval of environments for all tenants.';
+        }
     }
 
     keys
