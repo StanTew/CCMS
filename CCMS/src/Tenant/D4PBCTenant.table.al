@@ -176,4 +176,11 @@ table 62001 "D4P BC Tenant"
         OAuthClientApplication.SetClientSecret(GetClientSecret());
         OAuthClientApplication.AddScope('https://api.businesscentral.dynamics.com/.default');
     end;
+
+    procedure GetMicrosoftGraphOAuthClientApplication() OAuthClientApplication: Codeunit "D4P OAuth Appl. Config"
+    begin
+        OAuthClientApplication.SetClientId("Client ID");
+        OAuthClientApplication.SetClientSecret(GetClientSecret());
+        OAuthClientApplication.AddScope('https://graph.microsoft.com/.default');
+    end;
 }

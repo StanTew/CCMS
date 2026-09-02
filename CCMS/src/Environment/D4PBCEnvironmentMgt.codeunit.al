@@ -1,5 +1,6 @@
 namespace D4P.CCMS.Environment;
 
+using D4P.CCMS.Auth;
 using D4P.CCMS.Capacity;
 using D4P.CCMS.Connector;
 using D4P.CCMS.Extension;
@@ -206,10 +207,12 @@ codeunit 62000 "D4P BC Environment Mgt"
     [TryFunction]
     local procedure TryGetEnvironmentsAndCapacity(var BCTenant: Record "D4P BC Tenant")
     var
+        AppSecretExpiryMgt: Codeunit "D4P BC App Secret Expiry Mgt";
         CapacityHelper: Codeunit "D4P BC Capacity Helper";
     begin
         GetEnvironments(BCTenant);
         CapacityHelper.GetCapacityDataInBackground(BCTenant."Customer No.", BCTenant."Tenant ID");
+        AppSecretExpiryMgt.GetApplicationSecretExpirations(BCTenant);
     end;
 
     procedure GetEnvironmentsTracked(var BCTenant: Record "D4P BC Tenant"; RaiseError: Boolean)

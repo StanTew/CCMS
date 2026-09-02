@@ -1,5 +1,6 @@
 namespace D4P.CCMS.General;
 
+using D4P.CCMS.Auth;
 using D4P.CCMS.Customer;
 using D4P.CCMS.Tenant;
 using D4P.CCMS.Environment;
@@ -131,5 +132,21 @@ table 62047 "D4P BC Admin Center Cue"
     begin
         FilterForUpdatesInDays(BCEnvironment, NoOfDays);
         exit(BCEnvironment.Count());
+    end;
+
+    procedure FilterAppSecretsExpiringInDays(var AppSecretExpiry: Record "D4P BC App Secret Expiry"; NoOfDays: Integer)
+    var
+        EndDate: DateTime;
+    begin
+        EndDate := CreateDateTime(CalcDate(StrSubstNo('<%1D>', NoOfDays), Today()), 235959T);
+        AppSecretExpiry.SetFilter("Expiration Date", '%1..%2', CreateDateTime(Today(), 0T), EndDate);
+    end;
+
+    procedure GetNumberOfAppSecretsExpiringInDays(NoOfDays: Integer): Integer
+    var
+        AppSecretExpiry: Record "D4P BC App Secret Expiry";
+    begin
+        FilterAppSecretsExpiringInDays(AppSecretExpiry, NoOfDays);
+        exit(AppSecretExpiry.Count());
     end;
 }

@@ -31,6 +31,17 @@ codeunit 62034 D4PBCRestClientFactory
         RestClient.SetBaseAddress(BCSetup.GetAutomationAPIBaseUrl() + '/' + EnvironmentName);
     end;
 
+    procedure CreateRestClientForMicrosoftGraph(BCTenant: Record "D4P BC Tenant") RestClient: Codeunit "Rest Client"
+    var
+        BCSetup: Record "D4P BC Setup";
+        HttpClientHandler: Codeunit "D4P Http Client Handler";
+    begin
+        BCSetup := BCSetup.GetSetup();
+        HttpClientHandler.SetDebugMode(BCSetup."Debug Mode");
+        RestClient := RestClient.Create(HttpClientHandler, GetMicrosoftGraphOAuthCredentials(BCTenant));
+        RestClient.SetBaseAddress('https://graph.microsoft.com');
+    end;
+
     local procedure GetRestClient(BCTenant: Record "D4P BC Tenant"; DebugMode: Boolean) RestClient: Codeunit "Rest Client"
     var
         HttpClientHandler: Codeunit "D4P Http Client Handler";
@@ -45,6 +56,14 @@ codeunit 62034 D4PBCRestClientFactory
     begin
         OAuthAuthority := CreateOAuthAuthority(BCTenant."Tenant ID");
         HttpAuthentication := CreateHttpAuthentication(BCTenant.GetOAuthClientApplication(), CreateClientCredentialsFlow(OAuthAuthority));
+    end;
+
+    local procedure GetMicrosoftGraphOAuthCredentials(BCTenant: Record "D4P BC Tenant") HttpAuthentication: Interface "Http Authentication"
+    var
+        OAuthAuthority: Interface "D4P OAuth Authority";
+    begin
+        OAuthAuthority := CreateOAuthAuthority(BCTenant."Tenant ID");
+        HttpAuthentication := CreateHttpAuthentication(BCTenant.GetMicrosoftGraphOAuthClientApplication(), CreateClientCredentialsFlow(OAuthAuthority));
     end;
 
     local procedure CreateOAuthAuthority(TenantID: Guid) OAuthAuthority: Interface "D4P OAuth Authority"

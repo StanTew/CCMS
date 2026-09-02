@@ -1,5 +1,6 @@
 namespace D4P.CCMS.Tenant;
 
+using D4P.CCMS.Auth;
 using D4P.CCMS.Capacity;
 using D4P.CCMS.Environment;
 using D4P.CCMS.Extension;
@@ -104,6 +105,18 @@ page 62002 "D4P BC Tenant List"
                     CurrPage.Update(false);
                 end;
             }
+            action(GetApplicationSecretExpirations)
+            {
+                Caption = 'Get App Secret Expirations';
+                Image = Refresh;
+                ToolTip = 'Retrieves the expiration dates of all application secrets for the selected tenant.';
+                trigger OnAction()
+                var
+                    AppSecretExpiryMgt: Codeunit "D4P BC App Secret Expiry Mgt";
+                begin
+                    AppSecretExpiryMgt.GetApplicationSecretExpirations(Rec);
+                end;
+            }
             action(Setup)
             {
                 Caption = 'Setup';
@@ -179,6 +192,9 @@ page 62002 "D4P BC Tenant List"
             {
                 Caption = 'Environment Tasks';
                 actionref(GetAllEnvironmentsPromoted; GetAllEnvironmentsBackground)
+                {
+                }
+                actionref(GetApplicationSecretExpirationsPromoted; GetApplicationSecretExpirations)
                 {
                 }
             }

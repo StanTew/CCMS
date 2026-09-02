@@ -57,6 +57,120 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table D4P BC App Registration - Field Secret Expiration Date - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 4113260371 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>App Secret Expiry</source>
+          <target>App Secret Gültigkeit</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table D4P BC App Secret Expiry - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4113260371 - Field 4229006017 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the unique identifier of the Microsoft Entra application.</source>
+          <target>Gibt die eindeutige ID der Microsoft Entra-Anwendung an.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table D4P BC App Secret Expiry - Field Application ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Table 4113260371 - Field 4229006017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Application ID</source>
+          <target>Client ID</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table D4P BC App Secret Expiry - Field Application ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4113260371 - Field 3726907335 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the Microsoft Entra application.</source>
+          <target>Gibt den Namen der Microsoft Entra-Anwendung an.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table D4P BC App Secret Expiry - Field Application Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Table 4113260371 - Field 3726907335 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Application Name</source>
+          <target>Anwendungsname</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table D4P BC App Secret Expiry - Field Application Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4113260371 - Field 4190130733 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the customer number associated with this application secret.</source>
+          <target>Gibt die Kundennummer an, die diesem Anwendungsgeheimnis zugeordnet ist.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table D4P BC App Secret Expiry - Field Customer No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Table 4113260371 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.</source>
+          <target>Debitorennr.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table D4P BC App Secret Expiry - Field Customer No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4113260371 - Field 1579714849 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the date and time when the application secret expires.</source>
+          <target>Gibt Datum und Uhrzeit an, zu dem das Secret abläuft.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table D4P BC App Secret Expiry - Field Expiration Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Table 4113260371 - Field 1579714849 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Expiration Date</source>
+          <target>Ablaufdatum</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table D4P BC App Secret Expiry - Field Expiration Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4113260371 - Field 2112555197 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the unique identifier of the application secret.</source>
+          <target>Gibt die eindeutige ID des Secrets an.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table D4P BC App Secret Expiry - Field Secret ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Table 4113260371 - Field 2112555197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Secret ID</source>
+          <target>Secret ID</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table D4P BC App Secret Expiry - Field Secret ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4113260371 - Field 1225117715 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name or description of the application secret.</source>
+          <target>Gibt den Namen oder die Beschreibung des Secrets an.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table D4P BC App Secret Expiry - Field Secret Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Table 4113260371 - Field 1225117715 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Secret Name</source>
+          <target>Secret Name</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table D4P BC App Secret Expiry - Field Secret Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4113260371 - Field 1656975091 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the Microsoft Entra tenant that owns this application secret.</source>
+          <target>Gibt den Microsoft Entra-Mandanten an, dem dieses Secret gehört.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table D4P BC App Secret Expiry - Field Tenant ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Table 4113260371 - Field 1656975091 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tenant ID</source>
+          <target>Tenant-ID</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table D4P BC App Secret Expiry - Field Tenant ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4113260371 - Field 705672093 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the Business Central tenant that owns this application secret.</source>
+          <target>Gibt den Namen des Business Central-Mandanten an, dem dieses Secret gehört.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table D4P BC App Secret Expiry - Field Tenant Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Table 4113260371 - Field 705672093 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tenant Name</source>
+          <target>Tenant Name</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table D4P BC App Secret Expiry - Field Tenant Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3994498161 - Method 2502477622 - NamedType 1078089387" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Failed to retrieve application secret expirations: %1</source>
+          <target>Fehler beim Abrufen der Ablaufdaten der Secrets: %1</target>
+          <note from="Developer" annotates="general" priority="2">%1 = Error message</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit D4P BC App Secret Expiry Mgt - Method GetApplicationSecretExpirations - NamedType FailedToFetchErr</note>
+        </trans-unit>
         <trans-unit id="Page 2856621359 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>D365BC App Registration Card</source>
           <target>D365BC Anwendungsregistrierungskarte</target>
@@ -86,6 +200,12 @@
           <target>D365BC Anwendungsregistrierungen</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page D4P BC App Registration List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2725440009 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>App Secret Expirations</source>
+          <target>App Secret Ablauf</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page D4P BC App Secret Expiries - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 1764239386 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>App Registration Type</source>
@@ -4541,6 +4661,25 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page D4P BC Admin Center Cues - Control Customers Count - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1192667575 - Control 330024935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Secrets</source>
+          <target>Secrets</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page D4P BC Admin Center Cues - Control Secrets - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1192667575 - Control 594515065 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shows application secrets that expire within the next 30 days.</source>
+          <target>Zeigt App-Secrets an, die innerhalb der nächsten 30 Tage ablaufen.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page D4P BC Admin Center Cues - Control App Secrets Expiring (30 Days) - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1192667575 - Control 594515065 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>App Secrets Expiring (30 Days)</source>
+          <target>Ablaufende App-Secrets (30 Tage)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page D4P BC Admin Center Cues - Control App Secrets Expiring (30 Days) - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1192667575 - Control 4055340017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tenants</source>
           <target>Tenants</target>
@@ -6715,8 +6854,8 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page D4P BC Tenant List - Action GetAllEnvironmentsBackground - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1431185537 - Action 2948837889 - Method 1377591017 - NamedType 2294662597" size-unit="char" translate="yes" xml:space="preserve">
-          <source>This will start a background session for each of the %1 tenant(s) to get their environments. Continue?</source>
-          <target>Dadurch wird für jeden der %1 Tenant(s) eine Hintergrundsitzung gestartet, um die jeweiligen Umgebungen abzurufen. Fortfahren?</target>
+          <source>This will delete all locally stored environment data for %1 tenant(s) and start a background session to load it again. Continue?</source>
+          <target>Dadurch werden alle lokal gespeicherten Umgebungsdaten für %1 Mandant(en) gelöscht und eine Hintergrundsitzung gestartet, um sie erneut zu laden. Fortfahren?</target>
           <note from="Developer" annotates="general" priority="2">%1 = Number of tenants</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page D4P BC Tenant List - Action GetAllEnvironmentsBackground - Method OnAction - NamedType ConfirmMsg</note>
         </trans-unit>
@@ -6731,6 +6870,18 @@
           <target>Abruf der Umgebungen im Hintergrund für %1 Tenant(s) gestartet.</target>
           <note from="Developer" annotates="general" priority="2">%1 = Number of tenants</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page D4P BC Tenant List - Action GetAllEnvironmentsBackground - Method OnAction - NamedType StartedMsg</note>
+        </trans-unit>
+        <trans-unit id="Page 1431185537 - Action 2502477622 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Retrieves the expiration dates of all application secrets for the selected tenant.</source>
+          <target>Ruft die Ablaufdaten aller Secrets für den ausgewählten Mandanten ab.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page D4P BC Tenant List - Action GetApplicationSecretExpirations - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1431185537 - Action 2502477622 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get App Secret Expirations</source>
+          <target>App-Secrets-Ablaufdaten abrufen</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page D4P BC Tenant List - Action GetApplicationSecretExpirations - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1431185537 - Action 1514883969 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Configure D365BC Admin Center settings including debug mode.</source>
